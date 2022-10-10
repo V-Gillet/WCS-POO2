@@ -1,30 +1,28 @@
 <?php
 
 
-require_once 'Bicycle.php';
-require_once 'Car.php';
+require_once 'Truck.php';
 
-$car = new Car('blue', 5, 'gasoline');
-var_dump($car);
 
-echo $car->start();
+$truck = new Truck('blue', 3, 'fuel', 1000);
 
-$car->accelerate(20);
-var_dump($car);
+var_dump($truck);
 
-echo $car->brake(20);
-var_dump($car);
+$truck->setStock(1001);
+var_dump($truck);
 
-$car2 = new Car('yellow', 2, 'electricity');
-var_dump($car2);
+echo $truck->IsFullOrFilling(999) . PHP_EOL;
 
-echo $car2->start();
+echo $truck->IsFullOrFilling(1001);
 
-$car2->accelerate(20);
-var_dump($car2);
 
-echo $car2->brake(20);
-var_dump($car2);
+$truck2 = new Truck('red', 1, 'electric', 400);
 
-$bicycle = new Bicycle('red', 1, 'mecanical');
-var_dump($bicycle);
+var_dump($truck2);
+
+$truck2->setStock(1001);
+var_dump($truck2);
+
+echo $truck2->IsFullOrFilling(399) . PHP_EOL;
+
+echo $truck2->IsFullOrFilling(401);
